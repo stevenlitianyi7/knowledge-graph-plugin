@@ -1,0 +1,22 @@
+[project]
+name = "knowledge-graph-mcp"
+version = "0.1.0"
+description = "个人知识图谱 MCP Server — 从书籍提取因果规律，用规律分析真实情境"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "stevenlitianyi7" }]
+keywords = ["mcp", "knowledge-graph", "claude", "causal-reasoning"]
+dependencies = [
+    "mcp>=1.0.0",
+    "sentence-transformers>=2.2.0",
+    "numpy>=1.24.0",
+    "PyMuPDF>=1.24.0",
+]
+
+[project.scripts]
+knowledge-graph-mcp = "knowledge_graph_mcp:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

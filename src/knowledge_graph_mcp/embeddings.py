@@ -24,10 +24,6 @@ def get_embedding(text: str) -> list[float]:
     return get_model().encode(text, normalize_embeddings=True).tolist()
 
 
-def get_embeddings_batch(texts: list[str]) -> list[list[float]]:
-    return get_model().encode(texts, normalize_embeddings=True, batch_size=32).tolist()
-
-
 def cosine_similarity(vec1: list[float], vec2: list[float]) -> float:
     a, b = np.array(vec1), np.array(vec2)
     return float(np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b)))

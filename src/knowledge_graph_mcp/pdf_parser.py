@@ -1,7 +1,6 @@
 """PDF text extraction and chunking."""
 
 import fitz  # PyMuPDF
-import sys
 from pathlib import Path
 
 
@@ -37,13 +36,3 @@ def get_pdf_info(pdf_path: str) -> str:
     info = f"PDF: {Path(pdf_path).name}, Pages: {len(doc)}, Characters: {sum(len(p.get_text('text')) for p in doc)}"
     doc.close()
     return info
-
-
-if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        print(get_pdf_info(sys.argv[1]))
-        data = extract_text_from_pdf(sys.argv[1])
-        chunks = chunk_text(data)
-        print(f"Split into {len(chunks)} chunks")
-        for i, c in enumerate(chunks):
-            print(f"  Chunk {i+1}: pages {c['start_page']}-{c['end_page']}, {len(c['text'])} chars")
