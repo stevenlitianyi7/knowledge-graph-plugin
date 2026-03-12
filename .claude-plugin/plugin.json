@@ -1,0 +1,7 @@
+{
+  "name": "knowledge-graph-lite",
+  "version": "1.0.0",
+  "description": "个人知识图谱 — 从书籍提取因果规律，用规律分析真实情境",
+  "author": "stevenli",
+  "skills": ["read-book", "analyze"]
+}
